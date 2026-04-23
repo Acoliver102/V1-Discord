@@ -31,7 +31,8 @@ async def join(ctx):
 @bot.command()
 async def v1(ctx, *, message):
     # generate audio file with funny voice - overwrite existing file
-    process = sp.Popen('sam.exe -wav temp.wav ' + message + ' .', shell=True)
+    process = sp.Popen('sam.exe -wav temp.wav ' + message + ' .', shell=True,
+                       cwd=r'YOUR WORKING DIRECTORY HERE')
 
     # open file buffer
     with open('temp.wav', 'rb') as tmp_buf:
